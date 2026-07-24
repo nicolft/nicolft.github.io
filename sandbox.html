@@ -6,36 +6,42 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
 		<link href="./_app/immutable/assets/0.BS1pURRs.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/4.Dk70eeM0.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.DXqjyrvB.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/DvB18-ut.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/17DHYPr-.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/DXq1Ax5T.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.BlczpShI.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/D57E5ma4.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/D9v-qe6P.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/Cc2pYo8y.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/C7uS2mw1.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.B2Qqs4-N.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/VB1atHNx.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/B_1_IEtc.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/5AAuFnRK.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/4.DtawndN5.js"><!--[--><!--]--><title>Awesome Website</title>
+		<link href="./_app/immutable/assets/4.DiepanSC.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.B5nL7JeP.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/BMhgqBmt.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/BRSNaumR.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/Dh_e33yK.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.BIZeTqTN.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/NLEswu2d.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/bGiG5R6W.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CqUntxwt.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/BSLF_jox.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/DL97Dl5Y.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.BCHE6uS4.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/BXuA-Q1l.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/CmxJSX-z.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/C2gPKj-f.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/4.BfZIaf8O.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/Cf4uW0LP.js"><!--[--><!--]--><title>Awesome Website</title>
     </head>
     <body data-sveltekit-preload-data="hover">
-        <div style="display: contents"><!--[--><!--[--><!----><nav class="svelte-vszo5h"><ul class="svelte-vszo5h"><li class="svelte-vszo5h"><a href="/" class="svelte-vszo5h">Home</a></li> <li class="svelte-vszo5h"><a href="/kana" class="svelte-vszo5h">Kana</a></li> <li aria-current="page" class="svelte-vszo5h"><a href="/sandbox" class="svelte-vszo5h">Sandbox</a></li></ul></nav><!----> <!----><div class="container svelte-qqf7a5"><div class="inner svelte-qqf7a5">test</div> <div class="inner svelte-qqf7a5">test</div> <div class="inner svelte-qqf7a5" style="position: absolute;">i'm absolute!</div></div> <div class="container svelte-qqf7a5">test</div><!----><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
+        <div style="display: contents"><!--[--><!--[--><!----><nav class="svelte-vszo5h"><ul class="svelte-vszo5h"><li class="svelte-vszo5h"><a href="/" class="svelte-vszo5h">Home</a></li> <li class="svelte-vszo5h"><a href="/kana" class="svelte-vszo5h">Kana</a></li> <li aria-current="page" class="svelte-vszo5h"><a href="/sandbox" class="svelte-vszo5h">Sandbox</a></li></ul></nav><!----> <!----><div class="pad svelte-5sn2fm"><h2>IME event logger</h2> <p class="note svelte-5sn2fm">Defaults are a <b>plain textbox</b>, everything off. Type はな into <b>A</b> and read the log
+        top-to-bottom (oldest first).</p> <p class="note svelte-5sn2fm"><b>What good looks like:</b> ONE <code>cstart</code> … ONE <code>cend</code> for the whole
+        run — the composing region just grows (<code>sel=0,1</code> → <code>sel=0,2</code>) and the
+        field keeps はな. <b>The bug:</b> a <code>cend</code> with <code>d=""</code> after は alone,
+        i.e. the composition is being force-ended per kana. Find which switch below causes that.</p> <div class="toggles svelte-5sn2fm"><b>Field styling (prime suspect — the trainer's field is invisible/zero-sized)</b> <div class="bar svelte-5sn2fm"><button class="svelte-5sn2fm">proposed fix</button> <button class="svelte-5sn2fm">match trainer</button> <button class="svelte-5sn2fm">plain field</button> <button class="svelte-5sn2fm">focus field</button></div> <label><input type="checkbox"/> <code>all: unset</code></label> <label><input type="checkbox"/> <code>width/height: 0</code></label> <label><input type="checkbox"/> <code>opacity: 0</code></label> <label><input type="checkbox"/> <code>display: flex</code></label> <label><input type="checkbox"/> <code>pointer-events: none</code></label> <div class="measured svelte-5sn2fm">rendered size of active field: <b>—</b></div> <b>Restore a UA default (applied after <code>all: unset</code>)</b> <label><input type="checkbox"/> <code>white-space: pre</code></label> <label><input type="checkbox"/> <code>appearance: auto</code></label> <label><input type="checkbox"/> <code>display: inline-block</code></label> <label><input type="checkbox"/> <code>overflow: hidden</code></label> <label><input type="checkbox"/> <code>user-select: text</code></label> <label><input type="checkbox"/> <code>line-height: normal</code></label> <b>Script interventions</b> <label><input type="checkbox"/> pin caret to end (setSelectionRange)</label> <label><input type="checkbox"/> swap to sibling input</label> <label>after N chars: <input class="num svelte-5sn2fm" type="number" min="1" max="20" value="1"/></label> <label><input type="checkbox" checked/> lazy clear (wipe target, not source)</label></div> <div class="inputs svelte-5sn2fm"><!--[--><span class="anchor svelte-5sn2fm"><input class="field svelte-5sn2fm active" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="A"/></span><span class="anchor svelte-5sn2fm"><input class="field svelte-5sn2fm" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="B"/></span><!--]--></div> <div class="bar svelte-5sn2fm"><button class="svelte-5sn2fm">⇥ copy</button> <button class="svelte-5sn2fm">clear log</button> <button class="svelte-5sn2fm">reset</button> <button class="svelte-5sn2fm">▼ hide</button></div> <textarea class="log svelte-5sn2fm" readonly></textarea></div><!----><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_uqrp2s = {
+					__sveltekit_16jsmri = {
 						base: new URL(".", location).pathname.slice(0, -1)
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("./_app/immutable/entry/start.DXqjyrvB.js"),
-						import("./_app/immutable/entry/app.BlczpShI.js")
+						import("./_app/immutable/entry/start.B5nL7JeP.js"),
+						import("./_app/immutable/entry/app.BIZeTqTN.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 4],
